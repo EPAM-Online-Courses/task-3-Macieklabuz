@@ -1,3 +1,5 @@
+package efs.task.oop;
+
 public class ExtraordinaryVillager extends Villager {
     public enum Skill{
         IDENTIFY("I will identify items for you at no charge."),
@@ -20,10 +22,13 @@ public class ExtraordinaryVillager extends Villager {
     }
 
     @Override
-    public void attack(Fighter victim) {}
+    public void attack(Fighter victim) {
+        victim.takeHit(0);
+    }
 
     @Override
     public void takeHit(int damage) {
         this.health = 0;
     }
 }
+
